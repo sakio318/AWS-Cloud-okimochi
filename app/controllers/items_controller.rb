@@ -6,7 +6,7 @@ class ItemsController < ApplicationController
 
   def show
     @item = Item.find_by(id: params[:id])
-    @item_images = "https://cloud-okimochi-img-files-resize.s3-ap-northeast-1.amazonaws.com/store/" + @item.post_images.photo_ + "-thumbnail."
+    @item_images = "https://cloud-okimochi-img-files-resize.s3-ap-northeast-1.amazonaws.com/store/" + @item.post_images.photo_id+ "-thumbnail."
     @comment = Comment.new
     @comments = @item.comments.includes(:user).reverse_order
     @user = User.find(current_user.id)
