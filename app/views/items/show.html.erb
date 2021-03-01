@@ -8,7 +8,7 @@
     </div>
     <div class=" col-12 col-md-9">
       <h2>おきもちの詳細情報</h2>
-      <!--いいね機能レンダリング-->
+      <!--いいね機能のレンダリング-->
       <% if @item.user_id != current_user.id %>
         <div class="favorite-btn_<%= @item.id %>">
           <%= render 'favorites/favo', item:@item %>
