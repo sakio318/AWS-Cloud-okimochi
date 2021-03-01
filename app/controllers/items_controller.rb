@@ -6,7 +6,7 @@ class ItemsController < ApplicationController
 
   def show
     @item = Item.find_by(id: params[:id])
-    @item_images = "https://cloud-okimochi-img-files-resize.s3-ap-northeast-1.amazonaws.com/store/" + @item.post_images_photos+ "-thumbnail."
+    @item_images = "https://cloud-okimochi-img-files-resize.s3-ap-northeast-1.amazonaws.com/store/" + @item.post_images_photos + "-thumbnail."
     @comment = Comment.new
     @comments = @item.comments.includes(:user).reverse_order
     @user = User.find(current_user.id)
@@ -51,7 +51,7 @@ class ItemsController < ApplicationController
     @user = User.find(current_user.id)
     @item = Item.find(params[:id])
     if @item.update(item_params)
-      sleep(2)
+      sleep(3)
       redirect_to item_path(@item),　notice: '編集が完了しました'
     else
       render :edit
