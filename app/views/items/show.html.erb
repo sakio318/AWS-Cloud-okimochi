@@ -17,9 +17,11 @@
       <!--item詳細-->
       <div class="show_item">
         <% if @item.post_images.present? %>
-          <% @item.post_images.each do |image| %>
-            <%= attachment_image_tag @item_images,size: "200x200" %>
-          <% end %>
+          <%# @item.post_images.each do |image| %>
+            <%#= attachment_image_tag @item_images,size: "200x200" %>
+            <%#= image.inspect %>
+            <%= image_tag  @item_images %>
+          <%# end %>
         <% end %>
         <div class="show_item_list">
           <div class="flex-column">
